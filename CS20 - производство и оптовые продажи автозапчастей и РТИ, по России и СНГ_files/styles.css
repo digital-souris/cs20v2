@@ -2638,3 +2638,34 @@ a:hover {
     padding-top: 40px;
     display: block;
 }
+.product__count {
+    display: none;
+}
+.card__img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__desc {
+    padding-left: 75px;
+}
+.cs-subslider {
+    min-width: 90px;
+}
+.card__img {
+    width: 50%;
+    padding-left: 25px;
+}
+.cs-slider__img img {
+    width: 100%;
+}
+.slide__arrow {
+    margin-left: 35px;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px){
+    .card__img {
+        flex-direction: column-reverse;
+        padding-left: 0;
+    }
+}

@@ -137,10 +137,42 @@ $(document).ready(function(){
         })
     }
 
+    $('.cs-slider__slides').slick()
+    $('.cs-slider__arrow--prev').click(function(){
+        $(".cs-slider__slides").slick('slickPrev');
+    });
+    $('.cs-slider__arrow--next').click(function(){
+        $(".cs-slider__slides").slick('slickNext');
+    });
+    if ($(window).width() > 768) {
+        $('.cs-subslider').slick({
+            vertical: true,
+            arrows: true,
+            prevArrow: $('.slider__arrow_prev'),
+            nextArrow: $('.slider__arrow_next'),
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            focusOnSelect: true,
+            asNavFor: '.cs-slider__slides',
+        })
+    }
+    else {
+        $('.cs-subslider').slick({
+            arrows: true,
+            prevArrow: $('.slider__arrow_prev'),
+            nextArrow: $('.slider__arrow_next'),
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            focusOnSelect: true,
+            asNavFor: '.cs-slider__slides',
+        })
+    }
+
 
     $('.instagram__item').slick({
         dots: true,
-        arrows: false
+        arrows: false,
+        asNavFor: '.cs-subslider',
     })
 
 
@@ -576,13 +608,7 @@ $( "[data-sort]").change(function() {
     $('.js-product-plus').click(function () {
         $(this).parent().find('span').text(parseInt($(this).parent().find('span').text()) + 1)
     })
-	$('.cs-slider__slides').slick()
-	$('.cs-slider__arrow--prev').click(function(){
-		$(".cs-slider__slides").slick('slickPrev');
-	});
-	$('.cs-slider__arrow--next').click(function(){
-		$(".cs-slider__slides").slick('slickNext');
-	});
+
 	if($(window).width() < 481) {
 		$('.card-info .tab__titles').slick({
 			arrows: false,
