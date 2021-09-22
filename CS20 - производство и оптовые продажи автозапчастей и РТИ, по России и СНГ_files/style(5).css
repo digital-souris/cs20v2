@@ -1,0 +1,6 @@
+.nav--main .nav__item--not-auth {
+    min-width: 170px;
+}
+.mobile-nav__item li:first-child{
+	display:none
+}
