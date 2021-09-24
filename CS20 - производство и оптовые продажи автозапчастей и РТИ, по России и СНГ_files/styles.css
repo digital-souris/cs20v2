@@ -2773,4 +2773,8 @@ a:hover {
 .cs-card:not(.cs-card--transform) .cs-card__title {
     max-height: 53px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
