@@ -28,6 +28,13 @@ function add2basket(id)
 }
 $(document).ready(function(){
 
+    $('.instagram__item').slick({
+        dots: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    })
+
     $('.first-slider').slick({
         slidesToShow: 1,
         infinite: true,
@@ -72,15 +79,14 @@ $(document).ready(function(){
             infinite: true,
             dots: true,
             rows:2,
-            slidesPerRow:2,
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesPerRow:1,
+            slidesToShow: 2,
             responsive: [
                 {
                     breakpoint: 600,
                     settings: {
                         rows: 2,
-                        slidesToShow: 1,
+                        slidesToShow: 2,
                         slidesPerRow: 1,
                     }
                 },
@@ -169,11 +175,7 @@ $(document).ready(function(){
     }
 
 
-    $('.instagram__item').slick({
-        dots: true,
-        arrows: false,
-        asNavFor: '.cs-subslider',
-    })
+
 
 
 	setInterval(function(){

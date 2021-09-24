@@ -1560,13 +1560,23 @@ input {
 .instagram__item {
     max-width: 590px;
     width: 49%;
-    padding: 60px 45px;
+    padding: 0;
     background-repeat: no-repeat;
     background-position: center right;
     position: relative;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     overflow: hidden;
+}
+.instagram__item .slick-dots {
+    left: 45px;
+}
+.instagram__item a {
+    padding: 60px 45px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .instagram__item_drive::before {
     content: '';
@@ -1616,6 +1626,9 @@ input {
     }
     .instagram__item {
         background-size: 210px auto;
+
+    }
+    .instagram__item a {
         padding: 38px 25px;
     }
     .instagram__title {
@@ -2744,4 +2757,20 @@ a:hover {
     .news__filter ul li a svg {
         display: none;
     }
+    .news__content {
+        padding: 10px;
+    }
+    .news__layout {
+        overflow: hidden;
+    }
+    .news__layout .slick-slide {
+        overflow: hidden;
+    }
+    .news_home .news__layout .news__item {
+        margin: 5px 0;
+    }
+}
+.cs-card:not(.cs-card--transform) .cs-card__title {
+    max-height: 53px;
+    overflow: hidden;
 }
