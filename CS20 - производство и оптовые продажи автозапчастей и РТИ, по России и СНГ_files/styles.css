@@ -2825,5 +2825,11 @@ a:hover {
     text-decoration-line: underline;
 
     color: #272727;
-
+}
+.catalog__products.test.news__catalog {
+    display: flex;
+    flex-wrap: wrap;
+}
+.catalog__products.test.news__catalog a.news__item.cs-card {
+    max-width: 300px;
 }
