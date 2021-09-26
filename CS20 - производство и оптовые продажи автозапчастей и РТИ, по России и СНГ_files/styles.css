@@ -2778,3 +2778,52 @@ a:hover {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.filter-list__form {
+    display: none;
+}
+.col-lg-12.mb-2.smart-filter-parameters-box.filter__item.filter__item_series.cs-accordeon__item.w-100 {
+    width: 100%;
+}
+.filter__title {
+    position: relative;
+}
+.filter__title svg {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.card__items  li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #9A918C;
+    padding: 8px 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.015em;
+
+    color: #272727;
+}
+.card__items  li:last-child {
+    border-bottom: none;
+}
+.card__link {
+    padding-top: 25px;
+}
+.card__link a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    letter-spacing: 0.015em;
+    text-decoration-line: underline;
+
+    color: #272727;
+
+}

@@ -28,6 +28,19 @@ function add2basket(id)
 }
 $(document).ready(function(){
 
+    $('.scrollto').click(function (e) {
+        e.preventDefault()
+        var theme = $(this).attr('href')
+        $('html, body').animate({
+            scrollTop: $(theme).offset().top
+        }, 500);
+    })
+
+    $('.filter__title svg').click(function () {
+        $(this).hide()
+        $(this).closest('.filter__item').find('.filter-list__form').slideToggle()
+    })
+
     $('.instagram__item').slick({
         dots: true,
         arrows: false,
@@ -44,54 +57,54 @@ $(document).ready(function(){
         prevArrow: $('.first__arrow_prev'),
         nextArrow: $('.first__arrow_next'),
     })
-
-    if($(window).width() > 768) {
-        $('.news__layout').slick({
-            infinite: true,
-            dots: false,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            arrows:true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
+    if ($('.first-slider').length) {
+        if ($(window).width() > 768) {
+            $('.news__layout').slick({
+                infinite: true,
+                dots: false,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            rows: 2,
+                            slidesPerRow: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
                     }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        rows: 2,
-                        slidesPerRow: 2,
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }
-            ]
-        })
-    }
-    else {
-        $('.news__layout').slick({
-            arrows: false,
-            infinite: true,
-            dots: true,
-            rows:2,
-            slidesPerRow:1,
-            slidesToShow: 2,
-            responsive: [
-                {
-                    breakpoint: 600,
-                    settings: {
-                        rows: 2,
-                        slidesToShow: 2,
-                        slidesPerRow: 1,
-                    }
-                },
-            ]
-        })
+                ]
+            })
+        } else {
+            $('.news__layout').slick({
+                arrows: false,
+                infinite: true,
+                dots: true,
+                rows: 2,
+                slidesPerRow: 1,
+                slidesToShow: 2,
+                responsive: [
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesPerRow: 1,
+                        }
+                    },
+                ]
+            })
+        }
     }
     if($(window).width() > 768) {
         $('.populars .js-products, .cs-section--similar .product-item__wrap').slick({
@@ -142,6 +155,8 @@ $(document).ready(function(){
             ]
         })
     }
+
+
 
     $('.cs-slider__slides').slick()
     $('.cs-slider__arrow--prev').click(function(){
@@ -425,12 +440,6 @@ $(document).ready(function(){
         var action = 'add';
         $(this).text('В корзине');
         $(this).addClass('product-item__btn_active');
-		if($(window).width() <= 768)
-		{
-			$(this).closest('.product-item__bottom').find('.product__count').show();
-			$(this).closest('.product-item__bottom').find('.card__counter').show();
-			$(this).hide();
-		}
         $.ajax({
             dataType: 'json',
             data: {'count':count, 'action':action, 'product_id':product_id},
